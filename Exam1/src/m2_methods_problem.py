@@ -69,17 +69,21 @@ def test_count_primes():
     print('Actual count = ', count_primes(1, 3))
 
     ###############################################################################
-    #   TODO: 3. Add the additional test cases for this function below
+    #   DONE: 3. Add the additional test cases for this function below
     # After you have coded this, change its _TODO_ to DONE.
     ###############################################################################
     print()
     print('Your tests will go here!')
 
     print('Test 2 of count primes')
-    print('m = 20 and n = 22')
-    print('Expected count = 0')
-    print('Actual count = ', count_primes(20, 22))
+    print('m = 19 and n = 23')
+    print('Expected count = 2')
+    print('Actual count = ', count_primes(19, 23))
 
+    print('Test 3 of count primes')
+    print('m = 16 and n = 25')
+    print('Expected count = 3')
+    print('Actual count = ', count_primes(16, 25))
 
 
 
@@ -126,27 +130,22 @@ def count_primes(m,n):
     #     second and third examples above
     """
     ################################################################################
-    #   TODO: 4. Write the function count_primes(m,n) below here
+    #   DONE: 4. Write the function count_primes(m,n) below here
     # After you have coded and tested, change its _TODO_ to DONE.
     ################################################################################
     count = 0
     for k in range(m,n+1):
-        if n+1-m / 2!=n+1-m:
-            count = count+1
-        elif n+1-m / 3!=n+1-m:
-            count = count+1
-        #elif n + 1 - m % 4:
-         #   count = count + 1
-        #elif n + 1 - m % 5:
-         #   count = count + 1
+        if is_prime(k):
+            count = count + 1
+            print(k)
 
     return (count)
-    return
+
 
 
 def test_multiply_primes():
     ################################################################################
-    #   TODO: 6. Read the doc string for multiply_primes, below, then
+    #   DONE: 6. Read the doc string for multiply_primes, below, then
     #       then read the test cases here.
     #   After you have read both, change this _TODO_ to DONE.
     ###############################################################################
@@ -194,6 +193,12 @@ def multiply_primes(m,n):
     #   TODO: 6. Write the function multiply_primes(m,n) below here
     # After you have coded and tested, change this _TODO_ to DONE.
     ###############################################################################
-
+    multiply = 0
+    for k in range(m, n + 1):
+        if is_prime(k):
+            if multiply == 0:
+                multiply = 1
+            multiply = multiply * k
+    return multiply
 
 main()
